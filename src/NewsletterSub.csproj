@@ -14,6 +14,8 @@
     <NeutralLanguage>en</NeutralLanguage>
     <Description>A very simple newsletter subscription service for ASP.NET Core, which provides functionality to manage and maintain a collection of contacts and newsletter subscribers.</Description>
     <PackageTags>aspnetcore;newsletter;service;dotnetcore;efcore</PackageTags>
+    <PackageProjectUrl>https://github.com/jgdevlabs/newslettersub</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jgdevlabs/newslettersub</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
