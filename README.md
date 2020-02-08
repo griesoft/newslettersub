@@ -19,7 +19,7 @@ Before you can use the service you need to configure the database context for th
 If not, follow the [Microsoft docs](https://docs.microsoft.com/en-us/ef/core/get-started/?tabs=netcore-cli) on how to do so.
 Of course you may also create an own new DbContext for the service, it's up to you.
 
-Now in your DbContext, implement the `INewsletterSubDbContext` interface. Don't forgt to add a reference to the `NewsletterSub.Data` namespace.
+Now in your existing DbContext, implement the `INewsletterSubDbContext` interface. Don't forgt to add a reference to the `NewsletterSub.Data` namespace.
 
 You have now implemented two new DbSet's and your DbContext should look something like this
 
@@ -31,24 +31,20 @@ public class MyDbContext : DbContext, INewsletterSubDbContext
 }
 ```
 
-It is also highly recommended to add the following lines of code in your `OnModelCreating(ModelBuilder modelBuilder)` method of your DbContext.
+Now override the `OnModelCreating(ModelBuilder modelBuilder)` method of your DbContext and copy & paste this line of code `modelBuilder.BuildNewsletterSubModels()` in it. So that would look something like this:
 
 ```csharp
-modelBuilder.Entity<Contact>()
-  .Property(c => c.CreatedAt)
-  .HasDefaultValueSql("getdate()");
-modelBuilder.Entity<Contact>()
-  .HasIndex(c => c.Email)
-  .IsUnique();
-  
-modelBuilder.Entity<NewsletterSubscription>()
-  .Property(c => c.CreatedAt)
-  .HasDefaultValueSql("getdate()");
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    // Any existing code...
+
+    modelBuilder.BuildNewsletterSubModels();
+
+    // Any existing code...
+}
 ```
 
-As said already the above is optional, but especially making the `Contact.Email` property an index and unique is **highly** recommended.
-
-The only steps left now is to create a migration and update your database. Just run the following commands on with your `.NET Core CLI`
+The only steps left now is to create a migration and update your database. Just run the following commands on your `.NET Core CLI`
 
     dotnet ef migrations add <Migration Name>
 

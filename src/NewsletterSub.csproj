@@ -16,6 +16,7 @@
     <PackageTags>aspnetcore;newsletter;service;dotnetcore;efcore</PackageTags>
     <PackageProjectUrl>https://github.com/jgdevlabs/newslettersub</PackageProjectUrl>
     <RepositoryUrl>https://github.com/jgdevlabs/newslettersub</RepositoryUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -28,6 +29,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
   </ItemGroup>
 
 </Project>
