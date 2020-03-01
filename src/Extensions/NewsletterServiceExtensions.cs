@@ -11,7 +11,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <returns></returns>
         public static IServiceCollection AddNewsletterService(this IServiceCollection services)
         {
-            services.AddTransient<INewsletterService, NewsletterService>();
+            services.AddScoped<INewsletterService, NewsletterService>();
             return services;
         }
     }
