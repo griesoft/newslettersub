@@ -5,7 +5,7 @@ The main purpose of developing this was the need to implement this newsletter su
 
 [![Build Status](https://dev.azure.com/griesingersoftware/Newsletter%20Sub%20Service/_apis/build/status/NewsletterSub%20CI%20Pipeline?branchName=master)](https://dev.azure.com/griesingersoftware/Newsletter%20Sub%20Service/_build/latest?definitionId=16&branchName=master)
 [![NuGet](https://badgen.net/nuget/v/NewsletterSub)](https://www.nuget.org/packages/NewsletterSub)
-[![GitHub Release](https://badgen.net/github/release/jgdevlabs/newslettersub)](https://github.com/jgdevlabs/newslettersub/releases)
+[![GitHub Release](https://badgen.net/github/release/griesoft/newslettersub)](https://github.com/griesoft/newslettersub/releases)
 
 ## Installation
 
